@@ -1,0 +1,46 @@
+# Logout Functionality - Failure Analysis
+
+## Test Case
+test4 Logout Functionality
+
+## Test Status
+Failed - Intentional failure for assignment
+
+## Failure
+expect(locator).toBeVisible() failed
+
+## Locator
+locator('mat-sidenav a.menu').filter({ hasText: 'Logout' })
+
+## Expected
+Logout element should be visible after clicking the account icon.
+
+## Actual
+Logout element was found in the DOM but remained hidden.
+
+## Timeout
+5000 ms
+
+## Failure Location
+pages/LoginPage.ts:47
+
+## Root Cause
+The Logout menu item remained hidden after clicking the account icon.
+The locator successfully resolved to the Logout element, but the element
+was not visible when the visibility assertion was executed.
+
+## Trace Evidence
+The Playwright trace, screenshot, and video were generated for the
+failed execution.
+
+## Trace File
+test-results/tests-loginTest-test4-Logout-Functionality-chromium/trace.zip
+
+## Recommended Fix
+Investigate the account-menu opening behavior and ensure the Logout
+option becomes visible before attempting to click it.
+
+## Conclusion
+The test failed because the Logout element was hidden at the time of
+the visibility assertion. The failure was intentionally retained for
+trace analysis as required by the assignment.

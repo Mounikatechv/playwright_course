@@ -23,7 +23,7 @@ export class LoginPage extends BasePage  {
 
         this.accountIcon = this.page.locator( '.material-icons',{ hasText: 'account_circle' });
         this.logoutButton = this.page.locator('mat-sidenav a.menu', {hasText: 'Logout'});
-        //this.logoutButton = this.page.getByText('Logout', { exact: true }).nth(1);
+        
     }
 
     async goto() {

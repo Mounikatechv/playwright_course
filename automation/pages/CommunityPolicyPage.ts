@@ -19,7 +19,8 @@ export class CommunityPolicyPage {
     this.communityDropdown = page.locator('mat-select[role="combobox"]')
         .filter({ hasText: 'Premium owners' });
 
-    this.settings = page.getByText('Settings', { exact: true }).nth(1);
+    this.settings = page.locator('nav.nav-bar.settings-title')
+    .filter({ hasText: 'Settings' });
 
     this.communityPolicies = page.locator('a.menu-name:visible')
         .filter({ hasText: 'Community Policies' });

@@ -40,6 +40,7 @@ export class LoginPage extends BasePage  {
         await this.signInButton.click();
     }
 
+    //comment
     async logout() {
     await this.accountIcon.click();
     await expect(this.logoutButton).toBeVisible();
